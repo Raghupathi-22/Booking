@@ -1,0 +1,4 @@
+<resources>
+
+    <style name="Theme.Booking" parent="Theme.MaterialComponents.Light" />
+</resources>
