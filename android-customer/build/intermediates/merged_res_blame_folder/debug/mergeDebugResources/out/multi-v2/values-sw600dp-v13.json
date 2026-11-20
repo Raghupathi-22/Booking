@@ -1,0 +1,20 @@
+{
+    "logs": [
+        {
+            "outputFile": "com.hyderabad.booking.customer.android-customer-mergeDebugResources-44:/values-sw600dp-v13/values-sw600dp-v13.xml",
+            "map": [
+                {
+                    "source": "C:\\Users\\raghu\\.gradle\\caches\\9.6.0\\transforms\\908d6fc8a0bd4b3a5266ef71a522d52d\\transformed\\standard-core-1.7.22\\res\\values-sw600dp-v13\\values-sw600dp-v13.xml",
+                    "from": {
+                        "startLines": "2,3",
+                        "startColumns": "4,4",
+                        "startOffsets": "55,93",
+                        "endLines": "2,15",
+                        "endColumns": "37,12",
+                        "endOffsets": "88,871"
+                    }
+                }
+            ]
+        }
+    ]
+}

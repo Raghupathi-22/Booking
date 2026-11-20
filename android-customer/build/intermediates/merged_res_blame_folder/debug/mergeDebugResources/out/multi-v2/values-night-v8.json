@@ -1,0 +1,26 @@
+{
+    "logs": [
+        {
+            "outputFile": "com.hyderabad.booking.customer.android-customer-mergeDebugResources-44:/values-night-v8/values-night-v8.xml",
+            "map": [
+                {
+                    "source": "C:\\app\\Repos\\Booking\\android-customer\\src\\main\\res\\values-night\\themes.xml",
+                    "from": {
+                        "startLines": "1",
+                        "startColumns": "4",
+                        "startOffsets": "16",
+                        "endColumns": "96",
+                        "endOffsets": "108"
+                    },
+                    "to": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "95",
+                        "endOffsets": "146"
+                    }
+                }
+            ]
+        }
+    ]
+}
