@@ -1,61 +1,75 @@
 package com.hyderabad.booking.customer
 
 import android.os.Bundle
+import android.widget.Toast
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
-import androidx.compose.foundation.layout.*
-import androidx.compose.material3.*
-import androidx.compose.runtime.Composable
-import androidx.compose.ui.Modifier
-import androidx.compose.ui.tooling.preview.Preview
-import androidx.compose.ui.unit.dp
+import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.Surface
+import com.hyderabad.booking.common.AppContainer
+import com.hyderabad.booking.common.model.CreateOrderResponse
+import com.hyderabad.booking.common.ui.AppFlavor
+import com.hyderabad.booking.common.ui.BookingTheme
+import com.hyderabad.booking.customer.ui.CustomerRoot
+import com.razorpay.Checkout
+import com.razorpay.PaymentData
+import com.razorpay.PaymentResultWithDataListener
+import org.json.JSONObject
 
-class MainActivity : ComponentActivity() {
+class MainActivity : ComponentActivity(), PaymentResultWithDataListener {
+
+    private lateinit var container: AppContainer
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
+        container = (application as CustomerApp).container
+        Checkout.preload(applicationContext)
+
         setContent {
-            Surface(
-                modifier = Modifier.fillMaxSize(),
-                color = MaterialTheme.colorScheme.background
-            ) {
-                CustomerHomeScaffold()
+            BookingTheme(AppFlavor.CUSTOMER) {
+                Surface(color = MaterialTheme.colorScheme.background) {
+                    CustomerRoot(container = container, startPayment = ::openRazorpay)
+                }
             }
         }
     }
-}
 
-@Composable
-fun CustomerHomeScaffold() {
-    Scaffold(
-        modifier = Modifier.fillMaxSize(),
-        topBar = {
-            TopAppBar(
-                title = { Text("Hyderabad Booking - Customer") }
-            )
-        }
-    ) { innerPadding ->
-        Column(
-            modifier = Modifier
-                .fillMaxSize()
-                .padding(innerPadding)
-                .padding(16.dp),
-            verticalArrangement = Arrangement.Center
-        ) {
-            Text("Welcome to Hyderabad Booking Marketplace (Customer App)", style = MaterialTheme.typography.titleLarge)
-            Spacer(modifier = Modifier.height(16.dp))
-            Button(onClick = { /* TODO: Browse Salons & Tutors */ }) {
-                Text("Browse Salons & Tutors")
+    private fun openRazorpay(order: CreateOrderResponse) {
+        try {
+            val checkout = Checkout()
+            checkout.setKeyID(order.keyId)
+            val user = container.tokenStore.user
+            val options = JSONObject().apply {
+                put("name", "Hyderabad Booking")
+                put("description", "Booking #${order.bookingId}")
+                put("order_id", order.razorpayOrderId)
+                put("currency", order.currency ?: "INR")
+                put("amount", Math.round(order.amount * 100)) // paise
+                put("prefill", JSONObject().apply {
+                    put("contact", user?.phone ?: "")
+                })
             }
+            checkout.open(this, options)
+        } catch (e: Exception) {
+            PaymentBridge.events.tryEmit(PaymentEvent.Failure(e.message ?: "Could not start payment"))
         }
     }
-}
 
-@Preview(showBackground = true)
-@Composable
-fun CustomerHomePreview() {
-    Surface {
-        CustomerHomeScaffold()
+    override fun onPaymentSuccess(razorpayPaymentId: String?, data: PaymentData?) {
+        val paymentId = razorpayPaymentId ?: data?.paymentId
+        val orderId = data?.orderId
+        val signature = data?.signature
+        if (paymentId == null || orderId == null || signature == null) {
+            PaymentBridge.events.tryEmit(PaymentEvent.Failure("Payment completed but could not be verified. Contact support."))
+        } else {
+            PaymentBridge.events.tryEmit(PaymentEvent.Success(paymentId, orderId, signature))
+        }
+    }
+
+    override fun onPaymentError(code: Int, response: String?, data: PaymentData?) {
+        Toast.makeText(this, "Payment was not completed", Toast.LENGTH_SHORT).show()
+        PaymentBridge.events.tryEmit(PaymentEvent.Failure("Payment was not completed. You can try again."))
     }
 }

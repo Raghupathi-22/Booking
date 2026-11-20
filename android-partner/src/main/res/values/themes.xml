@@ -1,0 +1,4 @@
+<resources>
+    <!-- Compose draws the whole UI; this theme only styles the window behind it. -->
+    <style name="Theme.HyderabadBooking.Partner" parent="android:Theme.Material.Light.NoActionBar" />
+</resources>

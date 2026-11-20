@@ -17,6 +17,12 @@ public class WorkingHoursRequest {
 
     public WorkingHoursRequest() {}
 
+    public WorkingHoursRequest(String dayOfWeek, LocalTime openTime, LocalTime closeTime) {
+        this.dayOfWeek = dayOfWeek;
+        this.openTime = openTime;
+        this.closeTime = closeTime;
+    }
+
     public String getDayOfWeek() { return dayOfWeek; }
     public void setDayOfWeek(String dayOfWeek) { this.dayOfWeek = dayOfWeek; }
 

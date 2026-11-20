@@ -41,7 +41,7 @@ public class BookingService {
         User customer = userRepository.findById(customerId)
                 .orElseThrow(() -> new ResourceNotFoundException("Customer not found"));
 
-        Partner partner = partnerRepository.findById(request.getPartnerId())
+        Partner partner = partnerRepository.findByIdForUpdate(request.getPartnerId())
                 .orElseThrow(() -> new ResourceNotFoundException("Partner not found"));
 
         if (!"APPROVED".equals(partner.getStatus())) {
@@ -173,6 +173,52 @@ public class BookingService {
         booking.setStatus("CANCELLED");
         bookingRepository.save(booking);
 
+        return new BookingDto(booking);
+    }
+
+    /**
+     * Partner actions on their own bookings: ACCEPT (confirm a paid/free pending booking),
+     * REJECT (cancel) and COMPLETE (mark a confirmed booking as done).
+     */
+    @Transactional
+    public BookingDto updateStatusAsPartner(Long partnerUserId, Long bookingId, String action) {
+        Partner partner = partnerRepository.findByUserId(partnerUserId)
+                .orElseThrow(() -> new ResourceNotFoundException("Partner profile not found"));
+
+        Booking booking = bookingRepository.findById(bookingId)
+                .orElseThrow(() -> new ResourceNotFoundException("Booking not found"));
+
+        if (!booking.getPartner().getId().equals(partner.getId())) {
+            throw new BadRequestException("Booking does not belong to this partner");
+        }
+
+        String status = booking.getStatus();
+        switch (action.toUpperCase()) {
+            case "ACCEPT" -> {
+                if (!"PENDING".equals(status)) {
+                    throw new BadRequestException("Only pending bookings can be accepted");
+                }
+                if (!"PAID".equals(booking.getPaymentStatus())) {
+                    throw new BadRequestException("Booking is still awaiting payment");
+                }
+                booking.setStatus("CONFIRMED");
+            }
+            case "REJECT" -> {
+                if ("COMPLETED".equals(status) || "CANCELLED".equals(status)) {
+                    throw new BadRequestException("Booking can no longer be rejected");
+                }
+                booking.setStatus("CANCELLED");
+            }
+            case "COMPLETE" -> {
+                if (!"CONFIRMED".equals(status)) {
+                    throw new BadRequestException("Only confirmed bookings can be completed");
+                }
+                booking.setStatus("COMPLETED");
+            }
+            default -> throw new BadRequestException("Unknown action: " + action);
+        }
+
+        bookingRepository.save(booking);
         return new BookingDto(booking);
     }
 }

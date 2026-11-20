@@ -1,0 +1,1357 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta http-equiv="x-ua-compatible" content="IE=edge"/>
+<title>Test results - BookingConcurrencyTest</title>
+<link href="../css/base-style.css" rel="stylesheet" type="text/css"/>
+<link href="../css/style.css" rel="stylesheet" type="text/css"/>
+<script src="../js/report.js" type="text/javascript"></script>
+</head>
+<body>
+<div id="content">
+<h1>BookingConcurrencyTest</h1>
+<div class="breadcrumbs">
+<a href="../index.html">all</a> &gt; 
+<a href="../packages/com.hyderabad.booking.html">com.hyderabad.booking</a> &gt; BookingConcurrencyTest</div>
+<div id="summary">
+<table>
+<tr>
+<td>
+<div class="summaryGroup">
+<table>
+<tr>
+<td>
+<div class="infoBox" id="tests">
+<div class="counter">1</div>
+<p>tests</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="failures">
+<div class="counter">0</div>
+<p>failures</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="ignored">
+<div class="counter">0</div>
+<p>ignored</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="duration">
+<div class="counter">1.819s</div>
+<p>duration</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</td>
+<td>
+<div class="infoBox success" id="successRate">
+<div class="percent">100%</div>
+<p>successful</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div id="tabs">
+<ul class="tabLinks">
+<li>
+<a href="#tab0">Tests</a>
+</li>
+<li>
+<a href="#tab1">Standard output</a>
+</li>
+</ul>
+<div id="tab0" class="tab">
+<h2>Tests</h2>
+<table>
+<thead>
+<tr>
+<th>Test</th>
+<th>Duration</th>
+<th>Result</th>
+</tr>
+</thead>
+<tr>
+<td class="success">testConcurrentBookingsPreventDoubleBooking()</td>
+<td class="success">1.819s</td>
+<td class="success">passed</td>
+</tr>
+</table>
+</div>
+<div id="tab1" class="tab">
+<h2>Standard output</h2>
+<span class="code">
+<pre>2026-11-20T14:15:03.702+05:30  INFO 13936 --- [    Test worker] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.hyderabad.booking.BookingConcurrencyTest]: BookingConcurrencyTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-11-20T14:15:03.710+05:30  INFO 13936 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.hyderabad.booking.BookingApplication for test class com.hyderabad.booking.BookingConcurrencyTest
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::                (v3.2.5)
+
+2026-11-20T14:15:03.977+05:30  INFO 13936 --- [    Test worker] c.h.booking.BookingConcurrencyTest       : Starting BookingConcurrencyTest using Java 17.0.20.1 with PID 13936 (started by raghu in C:\app\Repos\Booking\backend)
+2026-11-20T14:15:03.977+05:30  INFO 13936 --- [    Test worker] c.h.booking.BookingConcurrencyTest       : No active profile set, falling back to 1 default profile: &quot;default&quot;
+2026-11-20T14:15:05.282+05:30  INFO 13936 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-11-20T14:15:05.343+05:30  INFO 13936 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 57 ms. Found 10 JPA repository interfaces.
+2026-11-20T14:15:05.921+05:30  INFO 13936 --- [    Test worker] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 0 (http)
+2026-11-20T14:15:05.949+05:30  INFO 13936 --- [    Test worker] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-11-20T14:15:05.951+05:30  INFO 13936 --- [    Test worker] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.20]
+2026-11-20T14:15:06.098+05:30  INFO 13936 --- [    Test worker] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2026-11-20T14:15:06.099+05:30  INFO 13936 --- [    Test worker] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2107 ms
+2026-11-20T14:15:06.396+05:30  INFO 13936 --- [    Test worker] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-11-20T14:15:06.418+05:30  INFO 13936 --- [    Test worker] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2026-11-20T14:15:06.508+05:30  INFO 13936 --- [    Test worker] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-11-20T14:15:06.522+05:30  INFO 13936 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Starting...
+2026-11-20T14:15:06.524+05:30  INFO 13936 --- [    Test worker] com.zaxxer.hikari.pool.HikariPool        : HikariPool-2 - Added connection conn10: url=jdbc:h2:mem:testdb user=SA
+2026-11-20T14:15:06.525+05:30  INFO 13936 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Start completed.
+2026-11-20T14:15:06.532+05:30  WARN 13936 --- [    Test worker] org.hibernate.orm.deprecation            : HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-11-20T14:15:07.307+05:30  INFO 13936 --- [    Test worker] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+Hibernate: 
+    drop table if exists bookings cascade 
+Hibernate: 
+    drop table if exists partner_documents cascade 
+Hibernate: 
+    drop table if exists partners cascade 
+Hibernate: 
+    drop table if exists payments cascade 
+Hibernate: 
+    drop table if exists payouts cascade 
+Hibernate: 
+    drop table if exists reviews cascade 
+Hibernate: 
+    drop table if exists services cascade 
+Hibernate: 
+    drop table if exists time_off cascade 
+Hibernate: 
+    drop table if exists users cascade 
+Hibernate: 
+    drop table if exists working_hours cascade 
+Hibernate: 
+    create table bookings (
+        amount numeric(10,2) not null,
+        commission_amount numeric(10,2) not null,
+        created_at timestamp(6),
+        customer_id bigint not null,
+        end_at timestamp(6) not null,
+        id bigint generated by default as identity,
+        partner_id bigint not null,
+        service_id bigint not null,
+        start_at timestamp(6) not null,
+        booking_type varchar(20) not null,
+        payment_status varchar(20),
+        status varchar(20) not null,
+        recurrence_rule varchar(255),
+        primary key (id)
+    )
+Hibernate: 
+    create table partner_documents (
+        id bigint generated by default as identity,
+        partner_id bigint not null,
+        doc_type varchar(50) not null,
+        url varchar(255) not null,
+        primary key (id)
+    )
+Hibernate: 
+    create table partners (
+        commission_percent numeric(5,2),
+        lat numeric(10,8),
+        lng numeric(11,8),
+        rating_avg numeric(3,2),
+        rating_count integer,
+        id bigint generated by default as identity,
+        user_id bigint not null,
+        status varchar(20),
+        type varchar(20) not null,
+        area varchar(100),
+        business_name varchar(150) not null,
+        address TEXT,
+        description TEXT,
+        primary key (id)
+    )
+Hibernate: 
+    create table payments (
+        amount numeric(10,2) not null,
+        refunded_amount numeric(10,2),
+        booking_id bigint not null unique,
+        id bigint generated by default as identity,
+        razorpay_order_id varchar(255),
+        razorpay_payment_id varchar(255),
+        status varchar(255) not null,
+        primary key (id)
+    )
+Hibernate: 
+    create table payouts (
+        amount numeric(10,2) not null,
+        id bigint generated by default as identity,
+        partner_id bigint not null,
+        period_end timestamp(6) not null,
+        period_start timestamp(6) not null,
+        status varchar(255) not null,
+        primary key (id)
+    )
+Hibernate: 
+    create table reviews (
+        rating integer not null,
+        booking_id bigint not null,
+        created_at timestamp(6),
+        customer_id bigint not null,
+        id bigint generated by default as identity,
+        partner_id bigint not null,
+        comment TEXT,
+        primary key (id)
+    )
+Hibernate: 
+    create table services (
+        active boolean not null,
+        duration_minutes integer not null,
+        price numeric(10,2) not null,
+        id bigint generated by default as identity,
+        partner_id bigint not null,
+        category varchar(20) not null,
+        mode varchar(20) not null,
+        name varchar(150) not null,
+        description TEXT,
+        primary key (id)
+    )
+Hibernate: 
+    create table time_off (
+        end_at timestamp(6) not null,
+        id bigint generated by default as identity,
+        partner_id bigint not null,
+        start_at timestamp(6) not null,
+        primary key (id)
+    )
+Hibernate: 
+    create table users (
+        created_at timestamp(6),
+        id bigint generated by default as identity,
+        phone varchar(20) not null unique,
+        role varchar(20) not null,
+        name varchar(100) not null,
+        fcm_token varchar(255),
+        primary key (id)
+    )
+Hibernate: 
+    create table working_hours (
+        close_time time(6) not null,
+        open_time time(6) not null,
+        id bigint generated by default as identity,
+        partner_id bigint not null,
+        day_of_week varchar(20) not null,
+        primary key (id)
+    )
+Hibernate: 
+    alter table if exists bookings 
+       add constraint FKib6gjgj2e9binkktxmm175bmm 
+       foreign key (customer_id) 
+       references users
+Hibernate: 
+    alter table if exists bookings 
+       add constraint FK4jrwwkwk867ipi16ugwalex7n 
+       foreign key (partner_id) 
+       references partners
+Hibernate: 
+    alter table if exists bookings 
+       add constraint FKjcwbou2jlblfwu14uoxs65b25 
+       foreign key (service_id) 
+       references services
+Hibernate: 
+    alter table if exists partner_documents 
+       add constraint FKkanau8ltd8sahe23cdtjqbtev 
+       foreign key (partner_id) 
+       references partners
+Hibernate: 
+    alter table if exists partners 
+       add constraint FKrd9a2kyvi3j1dbsrkc74ghtw3 
+       foreign key (user_id) 
+       references users
+Hibernate: 
+    alter table if exists payments 
+       add constraint FKc52o2b1jkxttngufqp3t7jr3h 
+       foreign key (booking_id) 
+       references bookings
+Hibernate: 
+    alter table if exists payouts 
+       add constraint FK9avky5r658af4hhpky94xn3w5 
+       foreign key (partner_id) 
+       references partners
+Hibernate: 
+    alter table if exists reviews 
+       add constraint FK28an517hrxtt2bsg93uefugrm 
+       foreign key (booking_id) 
+       references bookings
+Hibernate: 
+    alter table if exists reviews 
+       add constraint FKkquncb1glvrldaui8v52xfd5q 
+       foreign key (customer_id) 
+       references users
+Hibernate: 
+    alter table if exists reviews 
+       add constraint FKk1i6o858ndhel89mq5o2uoivk 
+       foreign key (partner_id) 
+       references partners
+Hibernate: 
+    alter table if exists services 
+       add constraint FKkactfu4q1ysdon2lyl9umlvbi 
+       foreign key (partner_id) 
+       references partners
+Hibernate: 
+    alter table if exists time_off 
+       add constraint FKjqeywsbqpw3prdvbi48c7m76v 
+       foreign key (partner_id) 
+       references partners
+Hibernate: 
+    alter table if exists working_hours 
+       add constraint FKcpw6ev6tvp6dodw9yiyi2paj0 
+       foreign key (partner_id) 
+       references partners
+2026-11-20T14:15:07.421+05:30  INFO 13936 --- [    Test worker] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-11-20T14:15:08.027+05:30  WARN 13936 --- [    Test worker] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-11-20T14:15:08.380+05:30  INFO 13936 --- [    Test worker] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@7bcbf479, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@29457ad2, org.springframework.security.web.context.SecurityContextHolderFilter@4dc0c152, org.springframework.security.web.header.HeaderWriterFilter@373ca236, org.springframework.web.filter.CorsFilter@5a050bf9, org.springframework.security.web.authentication.logout.LogoutFilter@17143892, com.hyderabad.booking.security.JwtAuthenticationFilter@3a3f66f3, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@4d2d95e6, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@30fe1b54, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@6281326f, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@7b2637fa, org.springframework.security.web.session.SessionManagementFilter@4b4eac80, org.springframework.security.web.access.ExceptionTranslationFilter@6ec2703e, org.springframework.security.web.access.intercept.AuthorizationFilter@3c89f754]
+2026-11-20T14:15:08.891+05:30  INFO 13936 --- [    Test worker] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 57475 (http) with context path ''
+2026-11-20T14:15:08.898+05:30  INFO 13936 --- [    Test worker] c.h.booking.BookingConcurrencyTest       : Started BookingConcurrencyTest in 5.177 seconds (process running for 49.636)
+2026-11-20T14:15:09.215+05:30  INFO 13936 --- [o-auto-1-exec-3] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-11-20T14:15:09.215+05:30  INFO 13936 --- [o-auto-1-exec-3] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-11-20T14:15:09.218+05:30  INFO 13936 --- [o-auto-1-exec-3] o.s.web.servlet.DispatcherServlet        : Completed initialization in 3 ms
+2026-11-20T14:15:09.269+05:30  INFO 13936 --- [o-auto-1-exec-3] c.hyderabad.booking.service.OtpService   : ========== OTP FOR [+919999911111]: 703429 ==========
+Hibernate: 
+    select
+        u1_0.id,
+        u1_0.created_at,
+        u1_0.fcm_token,
+        u1_0.name,
+        u1_0.phone,
+        u1_0.role 
+    from
+        users u1_0 
+    where
+        u1_0.phone=?
+Hibernate: 
+    insert 
+    into
+        users
+        (created_at, fcm_token, name, phone, role, id) 
+    values
+        (?, ?, ?, ?, ?, default)
+Hibernate: 
+    select
+        u1_0.id,
+        u1_0.created_at,
+        u1_0.fcm_token,
+        u1_0.name,
+        u1_0.phone,
+        u1_0.role 
+    from
+        users u1_0 
+    where
+        u1_0.id=?
+Hibernate: 
+    select
+        p1_0.id,
+        p1_0.address,
+        p1_0.area,
+        p1_0.business_name,
+        p1_0.commission_percent,
+        p1_0.description,
+        p1_0.lat,
+        p1_0.lng,
+        p1_0.rating_avg,
+        p1_0.rating_count,
+        p1_0.status,
+        p1_0.type,
+        p1_0.user_id 
+    from
+        partners p1_0 
+    left join
+        users u1_0 
+            on u1_0.id=p1_0.user_id 
+    where
+        u1_0.id=?
+Hibernate: 
+    insert 
+    into
+        partners
+        (address, area, business_name, commission_percent, description, lat, lng, rating_avg, rating_count, status, type, user_id, id) 
+    values
+        (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, default)
+Hibernate: 
+    update
+        users 
+    set
+        created_at=?,
+        fcm_token=?,
+        name=?,
+        phone=?,
+        role=? 
+    where
+        id=?
+Hibernate: 
+    select
+        p1_0.id,
+        p1_0.address,
+        p1_0.area,
+        p1_0.business_name,
+        p1_0.commission_percent,
+        p1_0.description,
+        p1_0.lat,
+        p1_0.lng,
+        p1_0.rating_avg,
+        p1_0.rating_count,
+        p1_0.status,
+        p1_0.type,
+        p1_0.user_id 
+    from
+        partners p1_0 
+    left join
+        users u1_0 
+            on u1_0.id=p1_0.user_id 
+    where
+        u1_0.id=?
+Hibernate: 
+    select
+        p1_0.id,
+        p1_0.address,
+        p1_0.area,
+        p1_0.business_name,
+        p1_0.commission_percent,
+        p1_0.description,
+        p1_0.lat,
+        p1_0.lng,
+        p1_0.rating_avg,
+        p1_0.rating_count,
+        p1_0.status,
+        p1_0.type,
+        p1_0.user_id 
+    from
+        partners p1_0 
+    where
+        p1_0.id=?
+Hibernate: 
+    update
+        partners 
+    set
+        address=?,
+        area=?,
+        business_name=?,
+        commission_percent=?,
+        description=?,
+        lat=?,
+        lng=?,
+        rating_avg=?,
+        rating_count=?,
+        status=?,
+        type=?,
+        user_id=? 
+    where
+        id=?
+Hibernate: 
+    select
+        p1_0.id,
+        p1_0.address,
+        p1_0.area,
+        p1_0.business_name,
+        p1_0.commission_percent,
+        p1_0.description,
+        p1_0.lat,
+        p1_0.lng,
+        p1_0.rating_avg,
+        p1_0.rating_count,
+        p1_0.status,
+        p1_0.type,
+        p1_0.user_id 
+    from
+        partners p1_0 
+    left join
+        users u1_0 
+            on u1_0.id=p1_0.user_id 
+    where
+        u1_0.id=?
+Hibernate: 
+    insert 
+    into
+        services
+        (active, category, description, duration_minutes, mode, name, partner_id, price, id) 
+    values
+        (?, ?, ?, ?, ?, ?, ?, ?, default)
+2026-11-20T14:15:09.715+05:30  INFO 13936 --- [o-auto-1-exec-1] c.hyderabad.booking.service.OtpService   : ========== OTP FOR [+919999922222]: 384939 ==========
+Hibernate: 
+    select
+        u1_0.id,
+        u1_0.created_at,
+        u1_0.fcm_token,
+        u1_0.name,
+        u1_0.phone,
+        u1_0.role 
+    from
+        users u1_0 
+    where
+        u1_0.phone=?
+Hibernate: 
+    insert 
+    into
+        users
+        (created_at, fcm_token, name, phone, role, id) 
+    values
+        (?, ?, ?, ?, ?, default)
+Hibernate: 
+    select
+        u1_0.id,
+        u1_0.created_at,
+        u1_0.fcm_token,
+        u1_0.name,
+        u1_0.phone,
+        u1_0.role 
+    from
+        users u1_0 
+    where
+        u1_0.id=?
+Hibernate: 
+    select
+        u1_0.id,
+        u1_0.created_at,
+        u1_0.fcm_token,
+        u1_0.name,
+        u1_0.phone,
+        u1_0.role 
+    from
+        users u1_0 
+    where
+        u1_0.id=?
+Hibernate: 
+    select
+        u1_0.id,
+        u1_0.created_at,
+        u1_0.fcm_token,
+        u1_0.name,
+        u1_0.phone,
+        u1_0.role 
+    from
+        users u1_0 
+    where
+        u1_0.id=?
+Hibernate: 
+    select
+        u1_0.id,
+        u1_0.created_at,
+        u1_0.fcm_token,
+        u1_0.name,
+        u1_0.phone,
+        u1_0.role 
+    from
+        users u1_0 
+    where
+        u1_0.id=?
+Hibernate: 
+    select
+        u1_0.id,
+        u1_0.created_at,
+        u1_0.fcm_token,
+        u1_0.name,
+        u1_0.phone,
+        u1_0.role 
+    from
+        users u1_0 
+    where
+        u1_0.id=?
+Hibernate: 
+    select
+        u1_0.id,
+        u1_0.created_at,
+        u1_0.fcm_token,
+        u1_0.name,
+        u1_0.phone,
+        u1_0.role 
+    from
+        users u1_0 
+    where
+        u1_0.id=?
+Hibernate: 
+    select
+        u1_0.id,
+        u1_0.created_at,
+        u1_0.fcm_token,
+        u1_0.name,
+        u1_0.phone,
+        u1_0.role 
+    from
+        users u1_0 
+    where
+        u1_0.id=?
+Hibernate: 
+    select
+        u1_0.id,
+        u1_0.created_at,
+        u1_0.fcm_token,
+        u1_0.name,
+        u1_0.phone,
+        u1_0.role 
+    from
+        users u1_0 
+    where
+        u1_0.id=?
+Hibernate: 
+    select
+        u1_0.id,
+        u1_0.created_at,
+        u1_0.fcm_token,
+        u1_0.name,
+        u1_0.phone,
+        u1_0.role 
+    from
+        users u1_0 
+    where
+        u1_0.id=?
+Hibernate: 
+    select
+        p1_0.id,
+        p1_0.address,
+        p1_0.area,
+        p1_0.business_name,
+        p1_0.commission_percent,
+        p1_0.description,
+        p1_0.lat,
+        p1_0.lng,
+        p1_0.rating_avg,
+        p1_0.rating_count,
+        p1_0.status,
+        p1_0.type,
+        p1_0.user_id 
+    from
+        partners p1_0 
+    where
+        p1_0.id=? for update
+Hibernate: 
+    select
+        p1_0.id,
+        p1_0.address,
+        p1_0.area,
+        p1_0.business_name,
+        p1_0.commission_percent,
+        p1_0.description,
+        p1_0.lat,
+        p1_0.lng,
+        p1_0.rating_avg,
+        p1_0.rating_count,
+        p1_0.status,
+        p1_0.type,
+        p1_0.user_id 
+    from
+        partners p1_0 
+    where
+        p1_0.id=? for update
+Hibernate: 
+    select
+        p1_0.id,
+        p1_0.address,
+        p1_0.area,
+        p1_0.business_name,
+        p1_0.commission_percent,
+        p1_0.description,
+        p1_0.lat,
+        p1_0.lng,
+        p1_0.rating_avg,
+        p1_0.rating_count,
+        p1_0.status,
+        p1_0.type,
+        p1_0.user_id 
+    from
+        partners p1_0 
+    where
+        p1_0.id=? for update
+Hibernate: 
+    select
+        p1_0.id,
+        p1_0.address,
+        p1_0.area,
+        p1_0.business_name,
+        p1_0.commission_percent,
+        p1_0.description,
+        p1_0.lat,
+        p1_0.lng,
+        p1_0.rating_avg,
+        p1_0.rating_count,
+        p1_0.status,
+        p1_0.type,
+        p1_0.user_id 
+    from
+        partners p1_0 
+    where
+        p1_0.id=? for update
+Hibernate: 
+    select
+        p1_0.id,
+        p1_0.address,
+        p1_0.area,
+        p1_0.business_name,
+        p1_0.commission_percent,
+        p1_0.description,
+        p1_0.lat,
+        p1_0.lng,
+        p1_0.rating_avg,
+        p1_0.rating_count,
+        p1_0.status,
+        p1_0.type,
+        p1_0.user_id 
+    from
+        partners p1_0 
+    where
+        p1_0.id=? for update
+Hibernate: 
+    select
+        p1_0.id,
+        p1_0.address,
+        p1_0.area,
+        p1_0.business_name,
+        p1_0.commission_percent,
+        p1_0.description,
+        p1_0.lat,
+        p1_0.lng,
+        p1_0.rating_avg,
+        p1_0.rating_count,
+        p1_0.status,
+        p1_0.type,
+        p1_0.user_id 
+    from
+        partners p1_0 
+    where
+        p1_0.id=? for update
+Hibernate: 
+    select
+        p1_0.id,
+        p1_0.address,
+        p1_0.area,
+        p1_0.business_name,
+        p1_0.commission_percent,
+        p1_0.description,
+        p1_0.lat,
+        p1_0.lng,
+        p1_0.rating_avg,
+        p1_0.rating_count,
+        p1_0.status,
+        p1_0.type,
+        p1_0.user_id 
+    from
+        partners p1_0 
+    where
+        p1_0.id=? for update
+Hibernate: 
+    select
+        p1_0.id,
+        p1_0.address,
+        p1_0.area,
+        p1_0.business_name,
+        p1_0.commission_percent,
+        p1_0.description,
+        p1_0.lat,
+        p1_0.lng,
+        p1_0.rating_avg,
+        p1_0.rating_count,
+        p1_0.status,
+        p1_0.type,
+        p1_0.user_id 
+    from
+        partners p1_0 
+    where
+        p1_0.id=? for update
+Hibernate: 
+    select
+        p1_0.id,
+        p1_0.address,
+        p1_0.area,
+        p1_0.business_name,
+        p1_0.commission_percent,
+        p1_0.description,
+        p1_0.lat,
+        p1_0.lng,
+        p1_0.rating_avg,
+        p1_0.rating_count,
+        p1_0.status,
+        p1_0.type,
+        p1_0.user_id 
+    from
+        partners p1_0 
+    where
+        p1_0.id=? for update
+Hibernate: 
+    select
+        se1_0.id,
+        se1_0.active,
+        se1_0.category,
+        se1_0.description,
+        se1_0.duration_minutes,
+        se1_0.mode,
+        se1_0.name,
+        se1_0.partner_id,
+        se1_0.price 
+    from
+        services se1_0 
+    where
+        se1_0.id=?
+Hibernate: 
+    select
+        u1_0.id,
+        u1_0.created_at,
+        u1_0.fcm_token,
+        u1_0.name,
+        u1_0.phone,
+        u1_0.role 
+    from
+        users u1_0 
+    where
+        u1_0.id=?
+Hibernate: 
+    select
+        p1_0.id,
+        p1_0.address,
+        p1_0.area,
+        p1_0.business_name,
+        p1_0.commission_percent,
+        p1_0.description,
+        p1_0.lat,
+        p1_0.lng,
+        p1_0.rating_avg,
+        p1_0.rating_count,
+        p1_0.status,
+        p1_0.type,
+        p1_0.user_id 
+    from
+        partners p1_0 
+    where
+        p1_0.id=? for update
+Hibernate: 
+    select
+        to1_0.id,
+        to1_0.end_at,
+        to1_0.partner_id,
+        to1_0.start_at 
+    from
+        time_off to1_0 
+    left join
+        partners p1_0 
+            on p1_0.id=to1_0.partner_id 
+    where
+        p1_0.id=? 
+        and to1_0.start_at&lt;? 
+        and to1_0.end_at&gt;?
+Hibernate: 
+    select
+        b1_0.id,
+        b1_0.amount,
+        b1_0.booking_type,
+        b1_0.commission_amount,
+        b1_0.created_at,
+        b1_0.customer_id,
+        b1_0.end_at,
+        b1_0.partner_id,
+        b1_0.payment_status,
+        b1_0.recurrence_rule,
+        b1_0.service_id,
+        b1_0.start_at,
+        b1_0.status 
+    from
+        bookings b1_0 
+    where
+        b1_0.partner_id=? 
+        and b1_0.status in ('PENDING', 'CONFIRMED') 
+        and b1_0.start_at&lt;? 
+        and b1_0.end_at&gt;? for update
+Hibernate: 
+    insert 
+    into
+        bookings
+        (amount, booking_type, commission_amount, created_at, customer_id, end_at, partner_id, payment_status, recurrence_rule, service_id, start_at, status, id) 
+    values
+        (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, default)
+Hibernate: 
+    select
+        se1_0.id,
+        se1_0.active,
+        se1_0.category,
+        se1_0.description,
+        se1_0.duration_minutes,
+        se1_0.mode,
+        se1_0.name,
+        se1_0.partner_id,
+        se1_0.price 
+    from
+        services se1_0 
+    where
+        se1_0.id=?
+Hibernate: 
+    select
+        to1_0.id,
+        to1_0.end_at,
+        to1_0.partner_id,
+        to1_0.start_at 
+    from
+        time_off to1_0 
+    left join
+        partners p1_0 
+            on p1_0.id=to1_0.partner_id 
+    where
+        p1_0.id=? 
+        and to1_0.start_at&lt;? 
+        and to1_0.end_at&gt;?
+Hibernate: 
+    select
+        b1_0.id,
+        b1_0.amount,
+        b1_0.booking_type,
+        b1_0.commission_amount,
+        b1_0.created_at,
+        b1_0.customer_id,
+        b1_0.end_at,
+        b1_0.partner_id,
+        b1_0.payment_status,
+        b1_0.recurrence_rule,
+        b1_0.service_id,
+        b1_0.start_at,
+        b1_0.status 
+    from
+        bookings b1_0 
+    where
+        b1_0.partner_id=? 
+        and b1_0.status in ('PENDING', 'CONFIRMED') 
+        and b1_0.start_at&lt;? 
+        and b1_0.end_at&gt;? for update
+Hibernate: 
+    select
+        se1_0.id,
+        se1_0.active,
+        se1_0.category,
+        se1_0.description,
+        se1_0.duration_minutes,
+        se1_0.mode,
+        se1_0.name,
+        se1_0.partner_id,
+        se1_0.price 
+    from
+        services se1_0 
+    where
+        se1_0.id=?
+Hibernate: 
+    select
+        to1_0.id,
+        to1_0.end_at,
+        to1_0.partner_id,
+        to1_0.start_at 
+    from
+        time_off to1_0 
+    left join
+        partners p1_0 
+            on p1_0.id=to1_0.partner_id 
+    where
+        p1_0.id=? 
+        and to1_0.start_at&lt;? 
+        and to1_0.end_at&gt;?
+Hibernate: 
+    select
+        b1_0.id,
+        b1_0.amount,
+        b1_0.booking_type,
+        b1_0.commission_amount,
+        b1_0.created_at,
+        b1_0.customer_id,
+        b1_0.end_at,
+        b1_0.partner_id,
+        b1_0.payment_status,
+        b1_0.recurrence_rule,
+        b1_0.service_id,
+        b1_0.start_at,
+        b1_0.status 
+    from
+        bookings b1_0 
+    where
+        b1_0.partner_id=? 
+        and b1_0.status in ('PENDING', 'CONFIRMED') 
+        and b1_0.start_at&lt;? 
+        and b1_0.end_at&gt;? for update
+Hibernate: 
+    select
+        se1_0.id,
+        se1_0.active,
+        se1_0.category,
+        se1_0.description,
+        se1_0.duration_minutes,
+        se1_0.mode,
+        se1_0.name,
+        se1_0.partner_id,
+        se1_0.price 
+    from
+        services se1_0 
+    where
+        se1_0.id=?
+Hibernate: 
+    select
+        to1_0.id,
+        to1_0.end_at,
+        to1_0.partner_id,
+        to1_0.start_at 
+    from
+        time_off to1_0 
+    left join
+        partners p1_0 
+            on p1_0.id=to1_0.partner_id 
+    where
+        p1_0.id=? 
+        and to1_0.start_at&lt;? 
+        and to1_0.end_at&gt;?
+Hibernate: 
+    select
+        b1_0.id,
+        b1_0.amount,
+        b1_0.booking_type,
+        b1_0.commission_amount,
+        b1_0.created_at,
+        b1_0.customer_id,
+        b1_0.end_at,
+        b1_0.partner_id,
+        b1_0.payment_status,
+        b1_0.recurrence_rule,
+        b1_0.service_id,
+        b1_0.start_at,
+        b1_0.status 
+    from
+        bookings b1_0 
+    where
+        b1_0.partner_id=? 
+        and b1_0.status in ('PENDING', 'CONFIRMED') 
+        and b1_0.start_at&lt;? 
+        and b1_0.end_at&gt;? for update
+Hibernate: 
+    select
+        se1_0.id,
+        se1_0.active,
+        se1_0.category,
+        se1_0.description,
+        se1_0.duration_minutes,
+        se1_0.mode,
+        se1_0.name,
+        se1_0.partner_id,
+        se1_0.price 
+    from
+        services se1_0 
+    where
+        se1_0.id=?
+Hibernate: 
+    select
+        to1_0.id,
+        to1_0.end_at,
+        to1_0.partner_id,
+        to1_0.start_at 
+    from
+        time_off to1_0 
+    left join
+        partners p1_0 
+            on p1_0.id=to1_0.partner_id 
+    where
+        p1_0.id=? 
+        and to1_0.start_at&lt;? 
+        and to1_0.end_at&gt;?
+Hibernate: 
+    select
+        b1_0.id,
+        b1_0.amount,
+        b1_0.booking_type,
+        b1_0.commission_amount,
+        b1_0.created_at,
+        b1_0.customer_id,
+        b1_0.end_at,
+        b1_0.partner_id,
+        b1_0.payment_status,
+        b1_0.recurrence_rule,
+        b1_0.service_id,
+        b1_0.start_at,
+        b1_0.status 
+    from
+        bookings b1_0 
+    where
+        b1_0.partner_id=? 
+        and b1_0.status in ('PENDING', 'CONFIRMED') 
+        and b1_0.start_at&lt;? 
+        and b1_0.end_at&gt;? for update
+Hibernate: 
+    select
+        se1_0.id,
+        se1_0.active,
+        se1_0.category,
+        se1_0.description,
+        se1_0.duration_minutes,
+        se1_0.mode,
+        se1_0.name,
+        se1_0.partner_id,
+        se1_0.price 
+    from
+        services se1_0 
+    where
+        se1_0.id=?
+Hibernate: 
+    select
+        to1_0.id,
+        to1_0.end_at,
+        to1_0.partner_id,
+        to1_0.start_at 
+    from
+        time_off to1_0 
+    left join
+        partners p1_0 
+            on p1_0.id=to1_0.partner_id 
+    where
+        p1_0.id=? 
+        and to1_0.start_at&lt;? 
+        and to1_0.end_at&gt;?
+Hibernate: 
+    select
+        b1_0.id,
+        b1_0.amount,
+        b1_0.booking_type,
+        b1_0.commission_amount,
+        b1_0.created_at,
+        b1_0.customer_id,
+        b1_0.end_at,
+        b1_0.partner_id,
+        b1_0.payment_status,
+        b1_0.recurrence_rule,
+        b1_0.service_id,
+        b1_0.start_at,
+        b1_0.status 
+    from
+        bookings b1_0 
+    where
+        b1_0.partner_id=? 
+        and b1_0.status in ('PENDING', 'CONFIRMED') 
+        and b1_0.start_at&lt;? 
+        and b1_0.end_at&gt;? for update
+Hibernate: 
+    select
+        se1_0.id,
+        se1_0.active,
+        se1_0.category,
+        se1_0.description,
+        se1_0.duration_minutes,
+        se1_0.mode,
+        se1_0.name,
+        se1_0.partner_id,
+        se1_0.price 
+    from
+        services se1_0 
+    where
+        se1_0.id=?
+Hibernate: 
+    select
+        to1_0.id,
+        to1_0.end_at,
+        to1_0.partner_id,
+        to1_0.start_at 
+    from
+        time_off to1_0 
+    left join
+        partners p1_0 
+            on p1_0.id=to1_0.partner_id 
+    where
+        p1_0.id=? 
+        and to1_0.start_at&lt;? 
+        and to1_0.end_at&gt;?
+Hibernate: 
+    select
+        b1_0.id,
+        b1_0.amount,
+        b1_0.booking_type,
+        b1_0.commission_amount,
+        b1_0.created_at,
+        b1_0.customer_id,
+        b1_0.end_at,
+        b1_0.partner_id,
+        b1_0.payment_status,
+        b1_0.recurrence_rule,
+        b1_0.service_id,
+        b1_0.start_at,
+        b1_0.status 
+    from
+        bookings b1_0 
+    where
+        b1_0.partner_id=? 
+        and b1_0.status in ('PENDING', 'CONFIRMED') 
+        and b1_0.start_at&lt;? 
+        and b1_0.end_at&gt;? for update
+Hibernate: 
+    select
+        se1_0.id,
+        se1_0.active,
+        se1_0.category,
+        se1_0.description,
+        se1_0.duration_minutes,
+        se1_0.mode,
+        se1_0.name,
+        se1_0.partner_id,
+        se1_0.price 
+    from
+        services se1_0 
+    where
+        se1_0.id=?
+Hibernate: 
+    select
+        to1_0.id,
+        to1_0.end_at,
+        to1_0.partner_id,
+        to1_0.start_at 
+    from
+        time_off to1_0 
+    left join
+        partners p1_0 
+            on p1_0.id=to1_0.partner_id 
+    where
+        p1_0.id=? 
+        and to1_0.start_at&lt;? 
+        and to1_0.end_at&gt;?
+Hibernate: 
+    select
+        b1_0.id,
+        b1_0.amount,
+        b1_0.booking_type,
+        b1_0.commission_amount,
+        b1_0.created_at,
+        b1_0.customer_id,
+        b1_0.end_at,
+        b1_0.partner_id,
+        b1_0.payment_status,
+        b1_0.recurrence_rule,
+        b1_0.service_id,
+        b1_0.start_at,
+        b1_0.status 
+    from
+        bookings b1_0 
+    where
+        b1_0.partner_id=? 
+        and b1_0.status in ('PENDING', 'CONFIRMED') 
+        and b1_0.start_at&lt;? 
+        and b1_0.end_at&gt;? for update
+Hibernate: 
+    select
+        se1_0.id,
+        se1_0.active,
+        se1_0.category,
+        se1_0.description,
+        se1_0.duration_minutes,
+        se1_0.mode,
+        se1_0.name,
+        se1_0.partner_id,
+        se1_0.price 
+    from
+        services se1_0 
+    where
+        se1_0.id=?
+Hibernate: 
+    select
+        to1_0.id,
+        to1_0.end_at,
+        to1_0.partner_id,
+        to1_0.start_at 
+    from
+        time_off to1_0 
+    left join
+        partners p1_0 
+            on p1_0.id=to1_0.partner_id 
+    where
+        p1_0.id=? 
+        and to1_0.start_at&lt;? 
+        and to1_0.end_at&gt;?
+Hibernate: 
+    select
+        b1_0.id,
+        b1_0.amount,
+        b1_0.booking_type,
+        b1_0.commission_amount,
+        b1_0.created_at,
+        b1_0.customer_id,
+        b1_0.end_at,
+        b1_0.partner_id,
+        b1_0.payment_status,
+        b1_0.recurrence_rule,
+        b1_0.service_id,
+        b1_0.start_at,
+        b1_0.status 
+    from
+        bookings b1_0 
+    where
+        b1_0.partner_id=? 
+        and b1_0.status in ('PENDING', 'CONFIRMED') 
+        and b1_0.start_at&lt;? 
+        and b1_0.end_at&gt;? for update
+Hibernate: 
+    select
+        se1_0.id,
+        se1_0.active,
+        se1_0.category,
+        se1_0.description,
+        se1_0.duration_minutes,
+        se1_0.mode,
+        se1_0.name,
+        se1_0.partner_id,
+        se1_0.price 
+    from
+        services se1_0 
+    where
+        se1_0.id=?
+Hibernate: 
+    select
+        to1_0.id,
+        to1_0.end_at,
+        to1_0.partner_id,
+        to1_0.start_at 
+    from
+        time_off to1_0 
+    left join
+        partners p1_0 
+            on p1_0.id=to1_0.partner_id 
+    where
+        p1_0.id=? 
+        and to1_0.start_at&lt;? 
+        and to1_0.end_at&gt;?
+Hibernate: 
+    select
+        b1_0.id,
+        b1_0.amount,
+        b1_0.booking_type,
+        b1_0.commission_amount,
+        b1_0.created_at,
+        b1_0.customer_id,
+        b1_0.end_at,
+        b1_0.partner_id,
+        b1_0.payment_status,
+        b1_0.recurrence_rule,
+        b1_0.service_id,
+        b1_0.start_at,
+        b1_0.status 
+    from
+        bookings b1_0 
+    where
+        b1_0.partner_id=? 
+        and b1_0.status in ('PENDING', 'CONFIRMED') 
+        and b1_0.start_at&lt;? 
+        and b1_0.end_at&gt;? for update
+</pre>
+</span>
+</div>
+</div>
+<div id="footer">
+<p>
+<div>
+<label class="hidden" id="label-for-line-wrapping-toggle" for="line-wrapping-toggle">Wrap lines
+<input id="line-wrapping-toggle" type="checkbox" autocomplete="off"/>
+</label>
+</div>Generated by 
+<a href="http://www.gradle.org">Gradle 8.8</a> at Nov 20, 2026, 2:15:15 PM</p>
+</div>
+</div>
+</body>
+</html>

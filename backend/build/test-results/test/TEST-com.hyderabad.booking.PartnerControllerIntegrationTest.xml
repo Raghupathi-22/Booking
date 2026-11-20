@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.hyderabad.booking.PartnerControllerIntegrationTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2026-11-17T12:13:16" hostname="APPDEVELOPER" time="0.459">
+<testsuite name="com.hyderabad.booking.PartnerControllerIntegrationTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2026-11-20T08:45:10" hostname="APPDEVELOPER" time="0.238">
   <properties/>
-  <testcase name="testPartnerRegistrationAndDocumentUpload()" classname="com.hyderabad.booking.PartnerControllerIntegrationTest" time="0.459"/>
-  <system-out><![CDATA[2026-11-17T17:43:16.615+05:30  INFO 14880 --- [    Test worker] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.hyderabad.booking.PartnerControllerIntegrationTest]: PartnerControllerIntegrationTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
-2026-11-17T17:43:16.637+05:30  INFO 14880 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.hyderabad.booking.BookingApplication for test class com.hyderabad.booking.PartnerControllerIntegrationTest
-2026-11-17T17:43:16.717+05:30  INFO 14880 --- [    Test worker] c.hyderabad.booking.service.OtpService   : ========== OTP FOR [+919777766666]: 795265 ==========
+  <testcase name="testPartnerRegistrationAndDocumentUpload()" classname="com.hyderabad.booking.PartnerControllerIntegrationTest" time="0.238"/>
+  <system-out><![CDATA[2026-11-20T14:15:10.849+05:30  INFO 13936 --- [    Test worker] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.hyderabad.booking.PartnerControllerIntegrationTest]: PartnerControllerIntegrationTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-11-20T14:15:10.864+05:30  INFO 13936 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.hyderabad.booking.BookingApplication for test class com.hyderabad.booking.PartnerControllerIntegrationTest
+2026-11-20T14:15:10.887+05:30  INFO 13936 --- [    Test worker] c.hyderabad.booking.service.OtpService   : ========== OTP FOR [+919777766666]: 299154 ==========
 Hibernate: 
     select
         u1_0.id,

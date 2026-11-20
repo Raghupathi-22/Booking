@@ -2,7 +2,9 @@ package com.hyderabad.booking.controller;
 
 import com.hyderabad.booking.dto.*;
 import com.hyderabad.booking.security.UserPrincipal;
+import com.hyderabad.booking.service.BookingService;
 import com.hyderabad.booking.service.PartnerService;
+import com.hyderabad.booking.service.PaymentService;
 import jakarta.validation.Valid;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -16,9 +18,13 @@ import java.util.List;
 public class PartnerController {
 
     private final PartnerService partnerService;
+    private final PaymentService paymentService;
+    private final BookingService bookingService;
 
-    public PartnerController(PartnerService partnerService) {
+    public PartnerController(PartnerService partnerService, PaymentService paymentService, BookingService bookingService) {
         this.partnerService = partnerService;
+        this.paymentService = paymentService;
+        this.bookingService = bookingService;
     }
 
     @PostMapping("/register")
@@ -107,5 +113,43 @@ public class PartnerController {
     public ResponseEntity<List<TimeOffDto>> getTimeOff(
             @AuthenticationPrincipal UserPrincipal principal) {
         return ResponseEntity.ok(partnerService.getTimeOff(principal.getId()));
+    }
+
+    // --- Earnings & Payouts Endpoints ---
+
+    @GetMapping("/earnings")
+    public ResponseEntity<PartnerEarningsDto> getEarnings(
+            @AuthenticationPrincipal UserPrincipal principal) {
+        PartnerEarningsDto earnings = paymentService.getPartnerEarnings(principal.getId());
+        return ResponseEntity.ok(earnings);
+    }
+
+    @GetMapping("/payouts")
+    public ResponseEntity<List<PayoutDto>> getPayouts(
+            @AuthenticationPrincipal UserPrincipal principal) {
+        List<PayoutDto> payouts = paymentService.getPartnerPayouts(principal.getId());
+        return ResponseEntity.ok(payouts);
+    }
+
+    // --- Booking actions (partner side) ---
+    @PostMapping("/bookings/{id}/accept")
+    public ResponseEntity<BookingDto> acceptBooking(
+            @AuthenticationPrincipal UserPrincipal principal,
+            @PathVariable Long id) {
+        return ResponseEntity.ok(bookingService.updateStatusAsPartner(principal.getId(), id, "ACCEPT"));
+    }
+
+    @PostMapping("/bookings/{id}/reject")
+    public ResponseEntity<BookingDto> rejectBooking(
+            @AuthenticationPrincipal UserPrincipal principal,
+            @PathVariable Long id) {
+        return ResponseEntity.ok(bookingService.updateStatusAsPartner(principal.getId(), id, "REJECT"));
+    }
+
+    @PostMapping("/bookings/{id}/complete")
+    public ResponseEntity<BookingDto> completeBooking(
+            @AuthenticationPrincipal UserPrincipal principal,
+            @PathVariable Long id) {
+        return ResponseEntity.ok(bookingService.updateStatusAsPartner(principal.getId(), id, "COMPLETE"));
     }
 }

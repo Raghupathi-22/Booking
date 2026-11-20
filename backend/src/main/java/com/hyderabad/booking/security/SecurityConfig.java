@@ -32,9 +32,9 @@ public class SecurityConfig {
             .csrf(csrf -> csrf.disable())
             .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
             .authorizeHttpRequests(auth -> auth
-                .requestMatchers("/admin/**").hasRole("ADMIN")
-                .requestMatchers("/api/v1/auth/**", "/swagger-ui/**", "/v3/api-docs/**", "/api/v1/partners/**").permitAll()
-                .requestMatchers("/api/v1/me", "/api/v1/partner/**", "/api/v1/bookings/**").authenticated()
+                .requestMatchers("/admin/**", "/api/v1/admin/**").hasRole("ADMIN")
+                .requestMatchers("/api/v1/auth/**", "/api/v1/webhooks/**", "/swagger-ui/**", "/v3/api-docs/**", "/api/v1/partners/**").permitAll()
+                .requestMatchers("/api/v1/me", "/api/v1/partner/**", "/api/v1/bookings/**", "/api/v1/payments/**").authenticated()
                 .anyRequest().authenticated()
             )
             .addFilterBefore(jwtAuthenticationFilter, UsernamePasswordAuthenticationFilter.class)

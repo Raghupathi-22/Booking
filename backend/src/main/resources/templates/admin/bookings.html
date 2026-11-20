@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Bookings Monitor - Admin Panel</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="bg-light">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark px-4">
+        <a class="navbar-brand fw-bold" href="/admin">Hyderabad Booking Admin</a>
+        <div class="navbar-nav me-auto ms-4">
+            <a class="nav-link" href="/admin">Dashboard</a>
+            <a class="nav-link" href="/admin/partners">Partner Approvals</a>
+            <a class="nav-link active" href="/admin/bookings">Bookings</a>
+            <a class="nav-link" href="/admin/payments">Payments</a>
+        </div>
+        <span class="text-white-50">Role: ADMIN</span>
+    </nav>
+    <div class="container mt-4">
+        <h2 class="fw-bold mb-3">All Platform Bookings</h2>
+        <div class="card shadow-sm border-0">
+            <div class="card-body p-0">
+                <table class="table table-hover align-middle mb-0">
+                    <thead class="table-light">
+                        <tr>
+                            <th>Booking ID</th>
+                            <th>Customer</th>
+                            <th>Partner</th>
+                            <th>Service</th>
+                            <th>Start Time</th>
+                            <th>Amount</th>
+                            <th>Commission</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr th:each="b : ${bookingList}">
+                            <td th:text="${b.id}">#1</td>
+                            <td th:text="${b.customerName}">Customer</td>
+                            <td th:text="${b.businessName}">Partner</td>
+                            <td th:text="${b.serviceName}">Service</td>
+                            <td th:text="${b.startAt}">Start Time</td>
+                            <td th:text="${b.amount}">500</td>
+                            <td th:text="${b.commissionAmount}">50</td>
+                            <td th:text="${b.status}">PENDING</td>
+                        </tr>
+                        <tr th:if="${bookingList.size() == 0}">
+                            <td colspan="8" class="text-center text-muted py-4">No bookings found on the platform.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

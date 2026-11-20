@@ -5,5 +5,6 @@ data class UserDto(
     val phone: String,
     val name: String,
     val role: String,
-    val fcmToken: String?
+    val fcmToken: String? = null,
+    val createdAt: String? = null
 )

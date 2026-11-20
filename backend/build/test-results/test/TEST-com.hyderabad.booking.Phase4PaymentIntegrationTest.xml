@@ -1,0 +1,417 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.hyderabad.booking.Phase4PaymentIntegrationTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2026-11-20T08:45:12" hostname="APPDEVELOPER" time="1.174">
+  <properties/>
+  <testcase name="testRazorpayPaymentFlowAndPartnerEarnings()" classname="com.hyderabad.booking.Phase4PaymentIntegrationTest" time="1.174"/>
+  <system-out><![CDATA[2026-11-20T14:15:12.742+05:30  INFO 13936 --- [    Test worker] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.hyderabad.booking.Phase4PaymentIntegrationTest]: Phase4PaymentIntegrationTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-11-20T14:15:12.773+05:30  INFO 13936 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.hyderabad.booking.BookingApplication for test class com.hyderabad.booking.Phase4PaymentIntegrationTest
+2026-11-20T14:15:12.871+05:30  INFO 13936 --- [    Test worker] c.hyderabad.booking.service.OtpService   : ========== OTP FOR [+919666655555]: 198157 ==========
+Hibernate: 
+    select
+        u1_0.id,
+        u1_0.created_at,
+        u1_0.fcm_token,
+        u1_0.name,
+        u1_0.phone,
+        u1_0.role 
+    from
+        users u1_0 
+    where
+        u1_0.phone=?
+Hibernate: 
+    insert 
+    into
+        users
+        (created_at, fcm_token, name, phone, role, id) 
+    values
+        (?, ?, ?, ?, ?, default)
+Hibernate: 
+    select
+        u1_0.id,
+        u1_0.created_at,
+        u1_0.fcm_token,
+        u1_0.name,
+        u1_0.phone,
+        u1_0.role 
+    from
+        users u1_0 
+    where
+        u1_0.id=?
+Hibernate: 
+    select
+        p1_0.id,
+        p1_0.address,
+        p1_0.area,
+        p1_0.business_name,
+        p1_0.commission_percent,
+        p1_0.description,
+        p1_0.lat,
+        p1_0.lng,
+        p1_0.rating_avg,
+        p1_0.rating_count,
+        p1_0.status,
+        p1_0.type,
+        p1_0.user_id 
+    from
+        partners p1_0 
+    left join
+        users u1_0 
+            on u1_0.id=p1_0.user_id 
+    where
+        u1_0.id=?
+Hibernate: 
+    insert 
+    into
+        partners
+        (address, area, business_name, commission_percent, description, lat, lng, rating_avg, rating_count, status, type, user_id, id) 
+    values
+        (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, default)
+Hibernate: 
+    select
+        p1_0.id,
+        p1_0.address,
+        p1_0.area,
+        p1_0.business_name,
+        p1_0.commission_percent,
+        p1_0.description,
+        p1_0.lat,
+        p1_0.lng,
+        p1_0.rating_avg,
+        p1_0.rating_count,
+        p1_0.status,
+        p1_0.type,
+        p1_0.user_id 
+    from
+        partners p1_0 
+    where
+        p1_0.id=?
+Hibernate: 
+    select
+        p1_0.id,
+        p1_0.address,
+        p1_0.area,
+        p1_0.business_name,
+        p1_0.commission_percent,
+        p1_0.description,
+        p1_0.lat,
+        p1_0.lng,
+        p1_0.rating_avg,
+        p1_0.rating_count,
+        p1_0.status,
+        p1_0.type,
+        p1_0.user_id 
+    from
+        partners p1_0 
+    where
+        p1_0.id=?
+Hibernate: 
+    update
+        partners 
+    set
+        address=?,
+        area=?,
+        business_name=?,
+        commission_percent=?,
+        description=?,
+        lat=?,
+        lng=?,
+        rating_avg=?,
+        rating_count=?,
+        status=?,
+        type=?,
+        user_id=? 
+    where
+        id=?
+Hibernate: 
+    select
+        p1_0.id,
+        p1_0.address,
+        p1_0.area,
+        p1_0.business_name,
+        p1_0.commission_percent,
+        p1_0.description,
+        p1_0.lat,
+        p1_0.lng,
+        p1_0.rating_avg,
+        p1_0.rating_count,
+        p1_0.status,
+        p1_0.type,
+        p1_0.user_id 
+    from
+        partners p1_0 
+    left join
+        users u1_0 
+            on u1_0.id=p1_0.user_id 
+    where
+        u1_0.id=?
+Hibernate: 
+    insert 
+    into
+        services
+        (active, category, description, duration_minutes, mode, name, partner_id, price, id) 
+    values
+        (?, ?, ?, ?, ?, ?, ?, ?, default)
+2026-11-20T14:15:13.344+05:30  INFO 13936 --- [    Test worker] c.hyderabad.booking.service.OtpService   : ========== OTP FOR [+919666644444]: 980897 ==========
+Hibernate: 
+    select
+        u1_0.id,
+        u1_0.created_at,
+        u1_0.fcm_token,
+        u1_0.name,
+        u1_0.phone,
+        u1_0.role 
+    from
+        users u1_0 
+    where
+        u1_0.phone=?
+Hibernate: 
+    insert 
+    into
+        users
+        (created_at, fcm_token, name, phone, role, id) 
+    values
+        (?, ?, ?, ?, ?, default)
+Hibernate: 
+    select
+        u1_0.id,
+        u1_0.created_at,
+        u1_0.fcm_token,
+        u1_0.name,
+        u1_0.phone,
+        u1_0.role 
+    from
+        users u1_0 
+    where
+        u1_0.id=?
+Hibernate: 
+    select
+        p1_0.id,
+        p1_0.address,
+        p1_0.area,
+        p1_0.business_name,
+        p1_0.commission_percent,
+        p1_0.description,
+        p1_0.lat,
+        p1_0.lng,
+        p1_0.rating_avg,
+        p1_0.rating_count,
+        p1_0.status,
+        p1_0.type,
+        p1_0.user_id 
+    from
+        partners p1_0 
+    where
+        p1_0.id=? for update
+Hibernate: 
+    select
+        se1_0.id,
+        se1_0.active,
+        se1_0.category,
+        se1_0.description,
+        se1_0.duration_minutes,
+        se1_0.mode,
+        se1_0.name,
+        se1_0.partner_id,
+        se1_0.price 
+    from
+        services se1_0 
+    where
+        se1_0.id=?
+Hibernate: 
+    select
+        to1_0.id,
+        to1_0.end_at,
+        to1_0.partner_id,
+        to1_0.start_at 
+    from
+        time_off to1_0 
+    left join
+        partners p1_0 
+            on p1_0.id=to1_0.partner_id 
+    where
+        p1_0.id=? 
+        and to1_0.start_at<? 
+        and to1_0.end_at>?
+Hibernate: 
+    select
+        b1_0.id,
+        b1_0.amount,
+        b1_0.booking_type,
+        b1_0.commission_amount,
+        b1_0.created_at,
+        b1_0.customer_id,
+        b1_0.end_at,
+        b1_0.partner_id,
+        b1_0.payment_status,
+        b1_0.recurrence_rule,
+        b1_0.service_id,
+        b1_0.start_at,
+        b1_0.status 
+    from
+        bookings b1_0 
+    where
+        b1_0.partner_id=? 
+        and b1_0.status in ('PENDING', 'CONFIRMED') 
+        and b1_0.start_at<? 
+        and b1_0.end_at>? for update
+Hibernate: 
+    insert 
+    into
+        bookings
+        (amount, booking_type, commission_amount, created_at, customer_id, end_at, partner_id, payment_status, recurrence_rule, service_id, start_at, status, id) 
+    values
+        (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, default)
+Hibernate: 
+    select
+        b1_0.id,
+        b1_0.amount,
+        b1_0.booking_type,
+        b1_0.commission_amount,
+        b1_0.created_at,
+        b1_0.customer_id,
+        b1_0.end_at,
+        b1_0.partner_id,
+        b1_0.payment_status,
+        b1_0.recurrence_rule,
+        b1_0.service_id,
+        b1_0.start_at,
+        b1_0.status 
+    from
+        bookings b1_0 
+    where
+        b1_0.id=?
+Hibernate: 
+    select
+        p1_0.id,
+        p1_0.amount,
+        p1_0.booking_id,
+        p1_0.razorpay_order_id,
+        p1_0.razorpay_payment_id,
+        p1_0.refunded_amount,
+        p1_0.status 
+    from
+        payments p1_0 
+    left join
+        bookings b1_0 
+            on b1_0.id=p1_0.booking_id 
+    where
+        b1_0.id=?
+Hibernate: 
+    insert 
+    into
+        payments
+        (amount, booking_id, razorpay_order_id, razorpay_payment_id, refunded_amount, status, id) 
+    values
+        (?, ?, ?, ?, ?, ?, default)
+Hibernate: 
+    select
+        b1_0.id,
+        b1_0.amount,
+        b1_0.booking_type,
+        b1_0.commission_amount,
+        b1_0.created_at,
+        b1_0.customer_id,
+        b1_0.end_at,
+        b1_0.partner_id,
+        b1_0.payment_status,
+        b1_0.recurrence_rule,
+        b1_0.service_id,
+        b1_0.start_at,
+        b1_0.status 
+    from
+        bookings b1_0 
+    where
+        b1_0.id=?
+Hibernate: 
+    select
+        p1_0.id,
+        p1_0.amount,
+        p1_0.booking_id,
+        p1_0.razorpay_order_id,
+        p1_0.razorpay_payment_id,
+        p1_0.refunded_amount,
+        p1_0.status 
+    from
+        payments p1_0 
+    left join
+        bookings b1_0 
+            on b1_0.id=p1_0.booking_id 
+    where
+        b1_0.id=?
+Hibernate: 
+    update
+        bookings 
+    set
+        amount=?,
+        booking_type=?,
+        commission_amount=?,
+        created_at=?,
+        customer_id=?,
+        end_at=?,
+        partner_id=?,
+        payment_status=?,
+        recurrence_rule=?,
+        service_id=?,
+        start_at=?,
+        status=? 
+    where
+        id=?
+Hibernate: 
+    update
+        payments 
+    set
+        amount=?,
+        booking_id=?,
+        razorpay_order_id=?,
+        razorpay_payment_id=?,
+        refunded_amount=?,
+        status=? 
+    where
+        id=?
+Hibernate: 
+    select
+        p1_0.id,
+        p1_0.address,
+        p1_0.area,
+        p1_0.business_name,
+        p1_0.commission_percent,
+        p1_0.description,
+        p1_0.lat,
+        p1_0.lng,
+        p1_0.rating_avg,
+        p1_0.rating_count,
+        p1_0.status,
+        p1_0.type,
+        p1_0.user_id 
+    from
+        partners p1_0 
+    left join
+        users u1_0 
+            on u1_0.id=p1_0.user_id 
+    where
+        u1_0.id=?
+Hibernate: 
+    select
+        b1_0.id,
+        b1_0.amount,
+        b1_0.booking_type,
+        b1_0.commission_amount,
+        b1_0.created_at,
+        b1_0.customer_id,
+        b1_0.end_at,
+        b1_0.partner_id,
+        b1_0.payment_status,
+        b1_0.recurrence_rule,
+        b1_0.service_id,
+        b1_0.start_at,
+        b1_0.status 
+    from
+        bookings b1_0 
+    left join
+        partners p1_0 
+            on p1_0.id=b1_0.partner_id 
+    where
+        p1_0.id=?
+2026-11-20T14:15:14.014+05:30  INFO 13936 --- [    Test worker] c.h.booking.service.PaymentService       : Received Razorpay Webhook Event
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

@@ -1,0 +1,3 @@
+<resources>
+    <style name="Theme.HyderabadBooking.Customer" parent="android:Theme.Material.NoActionBar" />
+</resources>

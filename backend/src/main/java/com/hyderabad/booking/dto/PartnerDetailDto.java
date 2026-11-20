@@ -20,10 +20,15 @@ public class PartnerDetailDto {
     private List<WorkingHoursDto> workingHours;
     private List<TimeOffDto> timeOff;
     private List<ReviewDto> reviews;
+    private List<PartnerDocumentDto> documents;
 
     public PartnerDetailDto() {}
 
     public PartnerDetailDto(Partner partner, List<ServiceDto> services, List<WorkingHoursDto> workingHours, List<TimeOffDto> timeOff, List<ReviewDto> reviews) {
+        this(partner, services, workingHours, timeOff, reviews, List.of());
+    }
+
+    public PartnerDetailDto(Partner partner, List<ServiceDto> services, List<WorkingHoursDto> workingHours, List<TimeOffDto> timeOff, List<ReviewDto> reviews, List<PartnerDocumentDto> documents) {
         this.id = partner.getId();
         this.businessName = partner.getBusinessName();
         this.type = partner.getType();
@@ -39,6 +44,7 @@ public class PartnerDetailDto {
         this.workingHours = workingHours;
         this.timeOff = timeOff;
         this.reviews = reviews;
+        this.documents = documents;
     }
 
     public Long getId() { return id; }
@@ -81,9 +87,11 @@ public class PartnerDetailDto {
     public void setWorkingHours(List<WorkingHoursDto> workingHours) { this.workingHours = workingHours; }
 
     public List<TimeOffDto> getTimeOff() { return timeOff; }
-    public void setTimeOff(TimeOffDto timeOffDto) { /* ... */ }
     public void setTimeOff(List<TimeOffDto> timeOff) { this.timeOff = timeOff; }
 
     public List<ReviewDto> getReviews() { return reviews; }
     public void setReviews(List<ReviewDto> reviews) { this.reviews = reviews; }
+
+    public List<PartnerDocumentDto> getDocuments() { return documents; }
+    public void setDocuments(List<PartnerDocumentDto> documents) { this.documents = documents; }
 }

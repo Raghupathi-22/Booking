@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Payments & Refunds - Admin Panel</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="bg-light">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark px-4">
+        <a class="navbar-brand fw-bold" href="/admin">Hyderabad Booking Admin</a>
+        <div class="navbar-nav me-auto ms-4">
+            <a class="nav-link" href="/admin">Dashboard</a>
+            <a class="nav-link" href="/admin/partners">Partner Approvals</a>
+            <a class="nav-link" href="/admin/bookings">Bookings</a>
+            <a class="nav-link active" href="/admin/payments">Payments</a>
+        </div>
+        <span class="text-white-50">Role: ADMIN</span>
+    </nav>
+    <div class="container mt-4">
+        <h2 class="fw-bold mb-3">Payments & Refunds Ledger</h2>
+        <div class="card shadow-sm border-0">
+            <div class="card-body p-0">
+                <table class="table table-hover align-middle mb-0">
+                    <thead class="table-light">
+                        <tr>
+                            <th>Payment ID</th>
+                            <th>Booking ID</th>
+                            <th>Razorpay Order ID</th>
+                            <th>Razorpay Payment ID</th>
+                            <th>Amount</th>
+                            <th>Status</th>
+                            <th>Refunded Amount</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr th:each="p : ${paymentList}">
+                            <td th:text="${p.id}">#1</td>
+                            <td th:text="${p.bookingId}">#1</td>
+                            <td th:text="${p.razorpayOrderId}">order_123</td>
+                            <td th:text="${p.razorpayPaymentId}">pay_123</td>
+                            <td th:text="${p.amount}">500</td>
+                            <td th:text="${p.status}">PAID</td>
+                            <td th:text="${p.refundedAmount}">0.00</td>
+                        </tr>
+                        <tr th:if="${paymentList.size() == 0}">
+                            <td colspan="7" class="text-center text-muted py-4">No payment transactions recorded yet.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -73,3 +73,6 @@ Flyway automatically provisions the following tables on startup:
 - `reviews`: Customer ratings (1-5) and feedback.
 - `notifications`: Push notification history.
 - Optimized database indexes for area, rating, and time-range lookups.
+
+## Android apps
+See [docs/ANDROID.md](docs/ANDROID.md).

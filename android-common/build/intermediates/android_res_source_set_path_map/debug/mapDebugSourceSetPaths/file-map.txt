@@ -1,0 +1,9 @@
+com.hyderabad.booking.common.android-common-pngs-0 C:\app\Repos\Booking\android-common\build\generated\res\pngs\debug
+com.hyderabad.booking.common.android-common-updated_navigation_xml-1 C:\app\Repos\Booking\android-common\build\generated\updated_navigation_xml\debug
+com.hyderabad.booking.common.android-common-mergeDebugResources-2 C:\app\Repos\Booking\android-common\build\intermediates\incremental\debug\mergeDebugResources\merged.dir
+com.hyderabad.booking.common.android-common-mergeDebugResources-3 C:\app\Repos\Booking\android-common\build\intermediates\incremental\debug\mergeDebugResources\stripped.dir
+com.hyderabad.booking.common.android-common-debug-4 C:\app\Repos\Booking\android-common\build\intermediates\merged_res\debug\mergeDebugResources
+com.hyderabad.booking.common.android-common-debug-5 C:\app\Repos\Booking\android-common\build\intermediates\packaged_res\debug\packageDebugResources
+com.hyderabad.booking.common.android-common-debug-6 C:\app\Repos\Booking\android-common\src\debug\res
+com.hyderabad.booking.common.android-common-main-7 C:\app\Repos\Booking\android-common\src\main\res
+gradleHome-0 C:\Users\raghu\.gradle

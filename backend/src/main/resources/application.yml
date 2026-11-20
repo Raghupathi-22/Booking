@@ -27,3 +27,5 @@ jwt:
 razorpay:
   key-id: ${RAZORPAY_KEY_ID:rzp_test_dummy}
   key-secret: ${RAZORPAY_KEY_SECRET:dummy_secret}
+  # DEV ONLY - set RAZORPAY_ALLOW_TEST_SIGNATURE=false in production
+  allow-test-signature: ${RAZORPAY_ALLOW_TEST_SIGNATURE:true}

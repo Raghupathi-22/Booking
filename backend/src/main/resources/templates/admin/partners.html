@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Partner Approvals - Admin Panel</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="bg-light">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark px-4">
+        <a class="navbar-brand fw-bold" href="/admin">Hyderabad Booking Admin</a>
+        <div class="navbar-nav me-auto ms-4">
+            <a class="nav-link" href="/admin">Dashboard</a>
+            <a class="nav-link active" href="/admin/partners">Partner Approvals</a>
+            <a class="nav-link" href="/admin/bookings">Bookings</a>
+            <a class="nav-link" href="/admin/payments">Payments</a>
+        </div>
+        <span class="text-white-50">Role: ADMIN</span>
+    </nav>
+    <div class="container mt-4">
+        <div class="d-flex justify-content-between align-items-center mb-3">
+            <h2 class="fw-bold">Partner Verification & Approvals</h2>
+            <div>
+                <a href="/admin/partners" class="btn btn-sm btn-outline-secondary">All</a>
+                <a href="/admin/partners?status=PENDING" class="btn btn-sm btn-outline-warning">Pending Only</a>
+                <a href="/admin/partners?status=APPROVED" class="btn btn-sm btn-outline-success">Approved</a>
+            </div>
+        </div>
+        <div class="card shadow-sm border-0">
+            <div class="card-body p-0">
+                <table class="table table-hover align-middle mb-0">
+                    <thead class="table-light">
+                        <tr>
+                            <th>ID</th>
+                            <th>Business Name</th>
+                            <th>Type</th>
+                            <th>Area</th>
+                            <th>Commission</th>
+                            <th>Status</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr th:each="partner : ${partnerList}">
+                            <td th:text="${partner.id}">1</td>
+                            <td class="fw-bold" th:text="${partner.businessName}">Salon</td>
+                            <td th:text="${partner.type}">SALON</td>
+                            <td th:text="${partner.area}">Hitech City</td>
+                            <td th:text="${partner.commissionPercent}">10</td>
+                            <td th:text="${partner.status}">PENDING</td>
+                            <td>
+                                <form th:action="@{'/admin/partners/' + ${partner.id} + '/status'}" method="post" class="d-inline">
+                                    <input type="hidden" name="status" value="APPROVED" />
+                                    <button type="submit" class="btn btn-sm btn-success">Approve</button>
+                                </form>
+                                <form th:action="@{'/admin/partners/' + ${partner.id} + '/status'}" method="post" class="d-inline ms-1">
+                                    <input type="hidden" name="status" value="REJECTED" />
+                                    <button type="submit" class="btn btn-sm btn-outline-danger">Reject</button>
+                                </form>
+                                <form th:action="@{'/admin/partners/' + ${partner.id} + '/status'}" method="post" class="d-inline ms-1">
+                                    <input type="hidden" name="status" value="SUSPENDED" />
+                                    <button type="submit" class="btn btn-sm btn-outline-secondary">Suspend</button>
+                                </form>
+                            </td>
+                        </tr>
+                        <tr th:if="${partnerList.size() == 0}">
+                            <td colspan="7" class="text-center text-muted py-4">No partner profiles found for this view.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

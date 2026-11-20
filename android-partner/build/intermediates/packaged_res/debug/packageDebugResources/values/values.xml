@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Hyderabad Booking Partner</string>
+    <style name="Theme.HyderabadBooking.Partner" parent="android:Theme.Material.Light.NoActionBar"/>
+</resources>
